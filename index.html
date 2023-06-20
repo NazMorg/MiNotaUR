@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOTAUR V1 | Notas Simples</title>
+    <!-- CSS -->
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="cajaPopup">
+        <div class="popup">
+            <div class="formularioPopup">
+                <header>
+                    <h1>Agregar Nueva Nota...</h1>
+                    <i class="uil uil-times"></i>
+                </header>
+                <form action="#">
+                    <div class="fila titulo">
+                        <label for="titulo">Titulo</label>
+                        <input id="titulo" type="text">
+                    </div>
+                    <div class="fila descripcion">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea id="descripcion"></textarea>
+                    </div>
+                    <button>Guardar Nota</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor">
+        <li class="nuevaNota">
+            <div class="iconoMas"><i class="uil uil-plus"></i></div>
+            <button type="button" class="btnNuevaNota">Nueva Nota</button>
+        </li>
+
+    </div>
+    <!-- SCRIPTS -->
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Mi Script -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

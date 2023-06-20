@@ -1,0 +1,242 @@
+/* Fuente Importada y reseteo CSS */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #5EB1BF;
+}
+
+/* Sistema grid principal */
+.contenedor {
+    margin: 50px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 265px);
+}
+
+.contenedor li {
+    height: auto;
+    list-style: none;
+    background-color: #CDEDF6;
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+}
+
+
+/* Configuracion varios */
+.contenedor .nota {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nuevaNota, .iconoMas, .bajoNota, .desplegable .menu li, .popup, header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nuevaNota {
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nuevaNota .iconoMas {
+    height: 78px;
+    width: 78px;
+    font-size: 40px;
+    color: #042A2B;
+    border: 2px dotted #042A2B;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.nuevaNota .btnNuevaNota {
+    color: #042A2B;
+    background-color: #5EB1BF;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.nota p {
+    color: #042A2B;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nota span {
+    display: block;
+    margin-top: 5px;
+    color: #042A2B;
+    font-size: 16px;
+}
+
+.nota .bajoNota {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    border-top: 1px solid #5EB1BF;
+}
+
+.bajoNota span {
+    color: #042A2B;
+    font-size: 14px;
+}
+
+.bajoNota .desplegable i {
+    color: #042A2B;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.desplegable {
+    position: relative;
+}
+
+.desplegable .menu {
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background-color: #CDEDF6;
+    border-radius: 4px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    
+}
+
+/* Hover de Menu Desplegable */
+.desplegable.mostrarDesplegable .menu {
+    transform: scale(1);
+}
+
+.desplegable .menu li {
+    height: 25px;
+    border-radius: 0;
+    background-color: #CDEDF6;
+    justify-content: flex-start;
+    font-size: 16px;
+    padding: 17px 15px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #5EB1BF;
+}
+
+.menu li i {
+    padding-right: 8px;
+}
+
+/* Configuracion General del Popup */
+.cajaPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.cajaPopup .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 400px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+}
+
+/* Esconder Popup */
+.cajaPopup, .cajaPopup .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+/* Mostrar Popup */
+.cajaPopup.mostrar, .cajaPopup.mostrar .popup {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup .formularioPopup {
+    width: calc(100% - 15px);
+    background-color: #CDEDF6;
+    border-radius: 5px;
+}
+
+.popup .formularioPopup header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #5EB1BF;
+}
+
+.formularioPopup header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #042A2B;
+}
+
+.formularioPopup header i {
+    color: black;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.formularioPopup form {
+    margin: 15px 25px 35px;
+}
+
+.formularioPopup form .fila {
+    margin-bottom: 10px;
+}
+
+.formularioPopup form .fila label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #042A2B;
+}
+
+.formularioPopup form :where(input, textarea) {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    outline: none;
+    border: 1px solid #5EB1BF;
+    border-radius: 5px;
+}
+
+.formularioPopup form textarea {
+    height: 250px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+.formularioPopup form button {
+    width: 100%;
+    height: 50px;
+    background-color: #5EB1BF;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #042A2B;
+    cursor: pointer;
+}

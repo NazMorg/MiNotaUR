@@ -11,7 +11,7 @@ const cajaNota = document.querySelector(".contenedor")
 
 
 /*** Array para cargar o almacenar notas ***/
-const notas = JSON.parse(localStorage.getItem("notas")) || [];
+let notas = JSON.parse(localStorage.getItem("notas")) ?? [];
 
 
 /*** EventListeners para control del popup ***/
@@ -55,7 +55,7 @@ function mostrarNotas() {
 };
 
 
-/*** Variable para control de edicion ***/
+/*** Variables para control de edicion o modificacion del usuario ***/
 let actualizado = false, actualizadoId;
 
 /*** Funcion editarNota ***/
@@ -115,11 +115,27 @@ btnAgregar.addEventListener("click", e => {
             title: 'Error!',
             text: 'Todos los campos deben estar llenos para guardar la nota!',
             icon: 'error',
-            color:'#042A2B',
-            background:'#CDEDF6',
+            color: '#042A2B',
+            background: '#CDEDF6',
             confirmButtonText: 'Continuar'
         });
     };
 });
 
-mostrarNotas();
+/*** Funcion cargarNotas ***/
+async function cargarNotas() {
+    const res = await fetch('../notas.json');
+    const notasPrecargadas = await res.json();
+    if (notas.length > 0) {
+        mostrarNotas();
+    } else {
+        notas = notasPrecargadas;
+        notas.forEach((nota) => {
+            mostrarNotas();
+        });
+       
+    };
+};
+
+
+cargarNotas();

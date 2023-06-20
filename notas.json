@@ -1,0 +1,27 @@
+[
+    {
+        "titulo": "Nota 1",
+        "cuerpo": "Contenido de la primera nota.",
+        "fecha": "2023-06-16"
+    },
+    {
+        "titulo": "Nota 2",
+        "cuerpo": "Contenido de la segunda nota.",
+        "fecha": "2023-06-17"
+    },
+    {
+        "titulo": "Nota 3",
+        "cuerpo": "Contenido de la tercera nota.",
+        "fecha": "2023-06-18"
+    },
+    {
+        "titulo": "Nota 4",
+        "cuerpo": "Contenido de la cuarta nota.",
+        "fecha": "2023-06-19"
+    },
+    {
+        "titulo": "Nota 5",
+        "cuerpo": "Contenido de la quinta nota.",
+        "fecha": "2023-06-20"
+    }
+]

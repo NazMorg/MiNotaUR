@@ -124,8 +124,8 @@ btnAgregar.addEventListener("click", e => {
 
 /*** Funcion cargarNotas ***/
 async function cargarNotas() {
-    const res = await fetch('../notas.json');
-    const notasPrecargadas = await res.json();
+    const res = await fetch('./notas.json');
+    let notasPrecargadas = await res.json();
     if (notas.length > 0) {
         mostrarNotas();
     } else {
@@ -139,3 +139,4 @@ async function cargarNotas() {
 
 
 cargarNotas();
+mostrarNotas();
